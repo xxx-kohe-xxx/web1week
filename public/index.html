@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="./css/app.css"/>
     <script type="text/javascript" src="./js/app.js"></script>
+    <script src="https://kit.fontawesome.com/a8cf1608f8.js" crossorigin="anonymous"></script>
     <title>Document</title>
   </head>
   <body>
@@ -15,7 +16,10 @@
       <div class="display">
         <div class="display__count" id="display_count"></div>
         <div class="display__result" id="result"></div>
-        <div class="display__bom" id="display_bom"></div>
+        <div class="display__pic">
+          <div class="display__bomb" id="display_bomb"><i class="fas fa-bomb"></i></div>
+          <div class="display__explosion invisible" id="display_explosion"><i class="fas fa-fire-alt"></i><br/><i class="fas fa-fire-alt"></i><i class="fas fa-fire-alt"></i></div>
+        </div>
       </div>
       <div class="controller">
         <button class="controller__button-player" id="btn_first_player">カウントをへらす</button>

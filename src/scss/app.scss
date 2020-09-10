@@ -1,4 +1,5 @@
 @import "./_reset.scss";
+@import "./_base.scss";
 
 // デバッグ用
 // * {
@@ -36,19 +37,49 @@
   &__count{
     font-size: 80px;
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
+  }
+  &__pic{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+  }
+  &__bomb {
+    font-size: 80px;
+    color: #000;
+    transition: all 300ms 0s ease;
+  }
+  &__explosion {
+    font-size: 48px;
+    color: #f00;
+    text-align: center;
+    animation-name: explosion;
+    animation-duration: .4s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: none;
   }
   &__result{
     width: 100%;
     font-size: 24px;
     position: absolute;
-    top: 60%;
-    // left: 50%;
-    // -webkit-transform: translate(-50%, -50%);
+    top: 50%;
     text-align: center;
   }
+  // i {
+  //   position: absolute;
+  //   top: 65%;
+  //   left: 50%;
+  //   -webkit-transform: translate(-50%, -50%);
+  //   font-size: 80px;
+  //   color: #000;
+  //   transition: all 300ms 0s ease;
+  // }
 }
 
 .controller{
@@ -56,7 +87,7 @@
   width: 100%;
   height: 20%;
   position: fixed;
-  bottom: 0px;
+  bottom: 16px;
   left: 0px;
   display: flex;
   justify-content: center;
@@ -66,9 +97,44 @@
   &__button-player{
     height: 100%;
     background-color: #eee;
+    border: 2px solid #000;
+    // border-top: 1px solid #000;
+    border-radius: .5rem;
+    background-position: 0 0, 3px 3px;
+    background-size: 6px 6px;
+    margin: 0 16px;
   }
   &__button-pass{
     height: 100%;
     background-color: #fe9696;
+  }
+}
+
+.invisible{
+  display: none;
+}
+
+@keyframes explosion {
+  0% {
+    transform: translateX(-15px);
+  }
+  50% {
+    transform: translateY(15px);
+  }
+  100% {
+    transform: translateX(15px);
+  }
+}
+
+@keyframes push-bomb {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(.8);
+    color: #f00;
+  }
+  100% {
+    transform: scale(1);
   }
 }

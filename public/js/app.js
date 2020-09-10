@@ -32,6 +32,8 @@ window.onload = function() {
   let first_player_btn = document.getElementById('btn_first_player');
   let second_player_btn = document.getElementById('btn_second_player');
   let result = document.getElementById('result');
+  let bomb = document.getElementById('display_bomb');
+  let explosion = document.getElementById('display_explosion');
 
   // パスボタンを押した時
   pass_btn.onclick = function() {
@@ -65,6 +67,8 @@ window.onload = function() {
     if (target_value === 0) {
       console.log("GAME OVER");
       let message = turn.current.name;
+      bomb.classList.add('invisible');
+      explosion.classList.remove('invisible');
       result.innerHTML = message + "の負けです。";
     }
   }

@@ -5,6 +5,7 @@ html(lang="ja")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     link(rel="stylesheet", href="./css/app.css")
     script(type="text/javascript" src="./js/app.js")
+    script(src="https://kit.fontawesome.com/a8cf1608f8.js" crossorigin="anonymous")
     title Document
   body
     main(class="main")
@@ -13,7 +14,14 @@ html(lang="ja")
       div(class="display")
         div(id="display_count" class="display__count")
         div(id="result" class="display__result")
-        div(id="display_bom" class="display__bom")
+        div(class="display__pic")
+          div(id="display_bomb" class="display__bomb")
+            i(class="fas fa-bomb")
+          div(id="display_explosion" class="display__explosion invisible")
+            i(class="fas fa-fire-alt" )
+            br
+            i(class="fas fa-fire-alt" )
+            i(class="fas fa-fire-alt" )
       div(class="controller")
         button(
           id="btn_first_player",
