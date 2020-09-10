@@ -3,40 +3,29 @@ html(lang="ja")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="./css/app.css")
     script(type="text/javascript" src="./js/app.js")
     title Document
   body
-    div#display_turn
-    div#display_count
-    input#btn_first_player(
-      type="button",
-      value="カウントをへらす"
-    )
-    input#btn_pass(
-      type="button",
-      value="パスする"
-      disabled
-    )
-    input#btn_second_player(
-      type="button",
-      value="カウントをへらす"
-      disabled
-    )
-    //- div
-    //-   label(for="プレイヤー1")
-    //-   input#btn_first_player(
-    //-     type="button",
-    //-     value="カウントをへらす"
-    //-   )
-    //- div
-    //-   input#btn_pass(
-    //-     type="button",
-    //-     value="パスする"
-    //-   )
-    //- div 
-    //-   label プレイヤー2
-    //-   input#btn_second_player(
-    //-     type="button",
-    //-     value="カウントをへらす"
-    //-   )
-    div#result
+    main(class="main")
+      div(class="info")
+        div(id="display_turn" class="info__display")
+      div(class="display")
+        div(id="display_count" class="display__count")
+        div(id="result" class="display__result")
+        div(id="display_bom" class="display__bom")
+      div(class="controller")
+        button(
+          id="btn_first_player",
+          class="controller__button-player",
+        ) カウントをへらす
+        button(
+          id="btn_pass",
+          class="controller__button-pass",
+          disabled
+        ) パスする
+        button(
+          id="btn_second_player",
+          class="controller__button-player",
+          disabled
+        ) カウントをへらす

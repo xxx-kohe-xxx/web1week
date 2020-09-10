@@ -5,7 +5,7 @@
 window.onload = function() {
 
   // カウントダウンしていく初期値
-  let target_value =30;
+  let target_value =10;
   // let target_value = Math.round(Math.random() * (5 - 3) + 3);
   // 初期値を表示させる
   let count_display = document.getElementById('display_count');

@@ -3,15 +3,25 @@
   <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="./css/app.css"/>
     <script type="text/javascript" src="./js/app.js"></script>
     <title>Document</title>
   </head>
   <body>
-    <div id="display_turn"></div>
-    <div id="display_count"></div>
-    <input id="btn_first_player" type="button" value="カウントをへらす"/>
-    <input id="btn_pass" type="button" value="パスする" disabled="disabled"/>
-    <input id="btn_second_player" type="button" value="カウントをへらす" disabled="disabled"/>
-    <div id="result"></div>
+    <main class="main">
+      <div class="info">
+        <div class="info__display" id="display_turn"></div>
+      </div>
+      <div class="display">
+        <div class="display__count" id="display_count"></div>
+        <div class="display__result" id="result"></div>
+        <div class="display__bom" id="display_bom"></div>
+      </div>
+      <div class="controller">
+        <button class="controller__button-player" id="btn_first_player">カウントをへらす</button>
+        <button class="controller__button-pass" id="btn_pass" disabled="disabled">パスする</button>
+        <button class="controller__button-player" id="btn_second_player" disabled="disabled">カウントをへらす</button>
+      </div>
+    </main>
   </body>
 </html>

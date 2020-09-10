@@ -1,0 +1,74 @@
+@import "./_reset.scss";
+
+// デバッグ用
+// * {
+//   border: 1px solid #f00;
+// }
+
+.main{
+  background-color: #eee;
+  width: 100%;
+  height: 100%;
+}
+
+.info{
+  // background-color: #96fe96;
+  width: 100%;
+  height: 20vh;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  &__display{
+    // background-color: #eee;
+    line-height: 20vh;
+    font-size: 32px;
+    text-align: center;
+  }
+}
+
+.display{
+  // background-color: #fe9696;
+  width: 100%;
+  // height: 100%;
+  // position: fixed;
+  top: 20vh;
+  left: 0px;
+  &__count{
+    font-size: 80px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+  }
+  &__result{
+    width: 100%;
+    font-size: 24px;
+    position: absolute;
+    top: 60%;
+    // left: 50%;
+    // -webkit-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+}
+
+.controller{
+  // background-color: #9696fe;
+  width: 100%;
+  height: 20%;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  display: flex;
+  justify-content: center;
+  button {
+    width: 30%;
+  }
+  &__button-player{
+    height: 100%;
+    background-color: #eee;
+  }
+  &__button-pass{
+    height: 100%;
+    background-color: #fe9696;
+  }
+}
