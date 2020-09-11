@@ -69,7 +69,7 @@ window.onload = function() {
       let message = turn.current.name;
       bomb.classList.add('invisible');
       explosion.classList.remove('invisible');
-      result.innerHTML = message + "の負けです。";
+      display_turn.innerHTML = message + "の負けです";
     }
   }
 
@@ -84,6 +84,10 @@ window.onload = function() {
   }
 
   function turnSwitch(currentPlayer) {
+    if (target_value === 0) {
+      pass_btn.disabled = true;
+      return;
+    }
     switch (currentPlayer) {
       case first_player:
         turn.current = second_player;

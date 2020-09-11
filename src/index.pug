@@ -10,7 +10,7 @@ html(lang="ja")
   body
     main(class="main")
       div(class="info")
-        div(id="display_turn" class="info__display")
+        p(id="display_turn" class="info__display")
       div(class="display")
         div(id="display_count" class="display__count")
         div(id="result" class="display__result")
@@ -26,7 +26,9 @@ html(lang="ja")
         button(
           id="btn_first_player",
           class="controller__button-player",
-        ) カウントをへらす
+        )
+          span カウントを
+          span へらす
         button(
           id="btn_pass",
           class="controller__button-pass",
@@ -36,4 +38,6 @@ html(lang="ja")
           id="btn_second_player",
           class="controller__button-player",
           disabled
-        ) カウントをへらす
+        )
+          span カウントを
+          span へらす

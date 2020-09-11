@@ -6,6 +6,32 @@
 //   border: 1px solid #f00;
 // }
 
+// アニメーション設定
+@keyframes explosion {
+  0% {
+    transform: translateX(-15px);
+  }
+  50% {
+    transform: translateY(15px);
+  }
+  100% {
+    transform: translateX(15px);
+  }
+}
+
+@keyframes push-bomb {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(.8);
+    color: #f00;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .main{
   background-color: #eee;
   width: 100%;
@@ -13,25 +39,39 @@
 }
 
 .info{
-  // background-color: #96fe96;
   width: 100%;
-  height: 20vh;
   position: fixed;
   top: 0px;
-  left: 0px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
   &__display{
-    // background-color: #eee;
-    line-height: 20vh;
+    margin: 24px;
+    padding: 24px;
+    border-top: 4px solid #000;
+    border-bottom: 4px solid #000;
     font-size: 32px;
     text-align: center;
+    position: relative;
+    &:before, &:after{
+      content: '';
+      position: absolute;
+      top: -10px;
+      width: 4px;
+      height: -webkit-calc(100% + 20px);
+      height: calc(100% + 20px);
+      background-color: black;
+    }
+    &:before {
+      left: 10px;
+    }
+    &:after {
+      right: 10px;
+    }
   }
 }
 
 .display{
-  // background-color: #fe9696;
   width: 100%;
-  // height: 100%;
-  // position: fixed;
   top: 20vh;
   left: 0px;
   &__count{
@@ -71,19 +111,9 @@
     top: 50%;
     text-align: center;
   }
-  // i {
-  //   position: absolute;
-  //   top: 65%;
-  //   left: 50%;
-  //   -webkit-transform: translate(-50%, -50%);
-  //   font-size: 80px;
-  //   color: #000;
-  //   transition: all 300ms 0s ease;
-  // }
 }
 
 .controller{
-  // background-color: #9696fe;
   width: 100%;
   height: 20%;
   position: fixed;
@@ -96,45 +126,26 @@
   }
   &__button-player{
     height: 100%;
-    background-color: #eee;
-    border: 2px solid #000;
-    // border-top: 1px solid #000;
+    font-size: 1.3rem;
+    background-color: #7fffdf;
+    border-bottom: 8px solid #66cc99;
     border-radius: .5rem;
     background-position: 0 0, 3px 3px;
     background-size: 6px 6px;
     margin: 0 16px;
+    & span {
+      display: block;
+    }
   }
   &__button-pass{
     height: 100%;
-    background-color: #fe9696;
+    background-color: #ffcce6;
+    border-bottom: 8px solid #ff66b3;
+    border-radius: .5rem;
+    font-size: 1.3rem;
   }
 }
 
 .invisible{
   display: none;
-}
-
-@keyframes explosion {
-  0% {
-    transform: translateX(-15px);
-  }
-  50% {
-    transform: translateY(15px);
-  }
-  100% {
-    transform: translateX(15px);
-  }
-}
-
-@keyframes push-bomb {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(.8);
-    color: #f00;
-  }
-  100% {
-    transform: scale(1);
-  }
 }

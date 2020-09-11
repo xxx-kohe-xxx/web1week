@@ -12,7 +12,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "build": "gulp pug"
+    "build": "gulp pug sass"
   },
   "author": ""
 }

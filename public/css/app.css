@@ -54,6 +54,23 @@ table {
 p, a {
   -webkit-font-smoothing: antialiased; }
 
+@keyframes explosion {
+  0% {
+    transform: translateX(-15px); }
+  50% {
+    transform: translateY(15px); }
+  100% {
+    transform: translateX(15px); } }
+
+@keyframes push-bomb {
+  0% {
+    transform: scale(1); }
+  50% {
+    transform: scale(0.8);
+    color: #f00; }
+  100% {
+    transform: scale(1); } }
+
 .main {
   background-color: #eee;
   width: 100%;
@@ -61,14 +78,30 @@ p, a {
 
 .info {
   width: 100%;
-  height: 20vh;
   position: fixed;
   top: 0px;
-  left: 0px; }
+  left: 50%;
+  -webkit-transform: translateX(-50%); }
   .info__display {
-    line-height: 20vh;
+    margin: 24px;
+    padding: 24px;
+    border-top: 4px solid #000;
+    border-bottom: 4px solid #000;
     font-size: 32px;
-    text-align: center; }
+    text-align: center;
+    position: relative; }
+    .info__display:before, .info__display:after {
+      content: '';
+      position: absolute;
+      top: -10px;
+      width: 4px;
+      height: -webkit-calc(100% + 20px);
+      height: calc(100% + 20px);
+      background-color: black; }
+    .info__display:before {
+      left: 10px; }
+    .info__display:after {
+      right: 10px; }
 
 .display {
   width: 100%;
@@ -119,32 +152,21 @@ p, a {
     width: 30%; }
   .controller__button-player {
     height: 100%;
-    background-color: #eee;
-    border: 2px solid #000;
+    font-size: 1.3rem;
+    background-color: #7fffdf;
+    border-bottom: 8px solid #66cc99;
     border-radius: .5rem;
     background-position: 0 0, 3px 3px;
     background-size: 6px 6px;
     margin: 0 16px; }
+    .controller__button-player span {
+      display: block; }
   .controller__button-pass {
     height: 100%;
-    background-color: #fe9696; }
+    background-color: #ffcce6;
+    border-bottom: 8px solid #ff66b3;
+    border-radius: .5rem;
+    font-size: 1.3rem; }
 
 .invisible {
   display: none; }
-
-@keyframes explosion {
-  0% {
-    transform: translateX(-15px); }
-  50% {
-    transform: translateY(15px); }
-  100% {
-    transform: translateX(15px); } }
-
-@keyframes push-bomb {
-  0% {
-    transform: scale(1); }
-  50% {
-    transform: scale(0.8);
-    color: #f00; }
-  100% {
-    transform: scale(1); } }
