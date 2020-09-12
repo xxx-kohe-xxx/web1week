@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+html(lang="ja")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    //- CSS,JS読み込み
+    link(rel="stylesheet", href="./css/app.css")
+    script(type="text/javascript" src="./js/app.js")
+    //- FontAwesome読み込み
+    script(src="https://kit.fontawesome.com/a8cf1608f8.js" crossorigin="anonymous")
+    title kohe-Web1week
+  body
+    main(class="main")
+      div(class="info")
+        p(id="display_turn" class="info__display")
+      div(class="display")
+        div(id="display_count" class="display__count")
+        div(id="result" class="display__result")
+        div(class="display__pic")
+          div(id="display_bomb" class="display__bomb")
+            i(class="fas fa-bomb")
+          div(id="display_explosion" class="display__explosion invisible")
+            i(class="fas fa-fire-alt" )
+            br
+            i(class="fas fa-fire-alt" )
+            i(class="fas fa-fire-alt" )
+      div(class="controller")
+        button(
+          id="btn_first_player"
+          class="controller__button-player"
+        )
+          span カウントを
+          span へらす
+        button(
+          id="btn_pass"
+          class="controller__button-pass"
+          disabled
+        ) パスする
+        button(
+          id="btn_second_player"
+          class="controller__button-player"
+          disabled
+        )
+          span カウントを
+          span へらす

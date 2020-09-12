@@ -12,12 +12,12 @@ window.onload = function() {
   count_display.innerHTML = target_value;
 
   let first_player = {
-    name: "プレイヤー1",
+    name: localStorage.getItem('first_player_name'),
     count: 0,
   }
 
   let second_player = {
-    name: "プレイヤー2",
+    name: localStorage.getItem('second_player_name'),
     count: 0,
   }
 
@@ -52,6 +52,8 @@ window.onload = function() {
     countDown();
     gameOver();
   }
+
+  console.log(localStorage.getItem('first_player_name'));
 
   // カウントを減らしていくメソッド
   function countDown() {

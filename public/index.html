@@ -4,28 +4,24 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="./css/app.css"/>
-    <script type="text/javascript" src="./js/app.js"></script>
-    <script src="https://kit.fontawesome.com/a8cf1608f8.js" crossorigin="anonymous"></script>
-    <title>Document</title>
+    <script type="text/javascript" src="./js/index.js"></script>
+    <title>kohe-Web1week | 名前入力</title>
   </head>
   <body>
     <main class="main">
-      <div class="info">
-        <p class="info__display" id="display_turn"></p>
-      </div>
-      <div class="display">
-        <div class="display__count" id="display_count"></div>
-        <div class="display__result" id="result"></div>
-        <div class="display__pic">
-          <div class="display__bomb" id="display_bomb"><i class="fas fa-bomb"></i></div>
-          <div class="display__explosion invisible" id="display_explosion"><i class="fas fa-fire-alt"></i><br/><i class="fas fa-fire-alt"></i><i class="fas fa-fire-alt"></i></div>
-        </div>
-      </div>
-      <div class="controller">
-        <button class="controller__button-player" id="btn_first_player"><span>カウントを</span><span>へらす</span></button>
-        <button class="controller__button-pass" id="btn_pass" disabled="disabled">パスする</button>
-        <button class="controller__button-player" id="btn_second_player" disabled="disabled"><span>カウントを</span><span>へらす</span></button>
-      </div>
+      <form class="form" action="./app.html">
+        <ul class="form__ul">
+          <li class="form__li">
+            <label class="form__label" for="name">先攻プレイヤーの名前</label>
+            <input class="form__input" id="first-player-name" type="text"/>
+          </li>
+          <li class="form__li">
+            <label class="form__label" for="name">後攻プレイヤーの名前</label>
+            <input class="form__input" id="second-player-name" type="text"/>
+          </li>
+        </ul>
+        <button class="form__button" id="btn-start">ゲームスタート</button>
+      </form>
     </main>
   </body>
 </html>
