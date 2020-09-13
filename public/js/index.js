@@ -10,12 +10,21 @@ window.onload = function() {
   let btn_start = document.getElementById('btn-start');
 
     console.log(first_player_name);
+    console.log(second_player_name);
   // スタートボタンを押した時
   btn_start.onclick = function() {
     // 先攻プレイヤーの名前を取得してローカルストレージへ格納
-    localStorage.setItem('first_player_name', getPlayerName(first_player_name));
+    let first_player = getPlayerName(first_player_name);
+    if (!first_player) {
+      first_player = 'プレイヤー1';
+    }
+    localStorage.setItem('first_player_name', first_player);
     // 後攻プレイヤーの名前を取得してローカルストレージへ格納
-    localStorage.setItem('second_player_name', getPlayerName(second_player_name));
+    let second_player = getPlayerName(second_player_name);
+    if (!second_player) {
+      second_player = 'プレイヤー2';
+    }
+    localStorage.setItem('second_player_name', second_player);
   }
 
   /**
@@ -25,7 +34,7 @@ window.onload = function() {
    */
   function getPlayerName(player) {
     let name = player.value;
-    console.log(name);
+    console.log(player);
     return name;
   }
 }

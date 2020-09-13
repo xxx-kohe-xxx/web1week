@@ -5,20 +5,19 @@
 window.onload = function() {
 
   // カウントダウンしていく初期値
-  let target_value =10;
-  // let target_value = Math.round(Math.random() * (5 - 3) + 3);
+  let target_value = Math.round(Math.random() * (50 - 30) + 30);
   // 初期値を表示させる
   let count_display = document.getElementById('display_count');
   count_display.innerHTML = target_value;
 
   let first_player = {
     name: localStorage.getItem('first_player_name'),
-    count: 0,
+    count: 3,
   }
 
   let second_player = {
     name: localStorage.getItem('second_player_name'),
-    count: 0,
+    count: 3,
   }
 
   let turn = {
@@ -78,10 +77,10 @@ window.onload = function() {
   // 
   function threeCount(player) {
     pass_btn.disabled = false;
-    player.count++;
-    if (player.count === 3){
+    player.count--;
+    if (player.count === 0){
       turnSwitch(player);
-      player.count = 0;
+      player.count = 3;
     }
   }
 
@@ -104,7 +103,7 @@ window.onload = function() {
     }
     console.log(currentPlayer.name);
     console.log(currentPlayer.count);
-    currentPlayer.count = 0;
+    currentPlayer.count = 3;
     pass_btn.disabled = true;
     display_turn.innerHTML = turn.current.name + "の番です";
   }

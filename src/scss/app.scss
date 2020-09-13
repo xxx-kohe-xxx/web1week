@@ -143,7 +143,16 @@
 // indexページ
 .description {
   &__h1 {
+    display: inline-block;
     margin: 24px;
+    font-size: 24px;
+    border-bottom: 1px solid;
+    padding: 8px;
+  }
+  &__p {
+    margin-left: 24px;
+    margin-bottom: 8px;
+    font-size: 16px;
   }
 }
 
